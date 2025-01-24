@@ -1,0 +1,132 @@
+/* Globals */
+:root {
+    --principal: rgb(81, 146, 97);
+    --principalOpac: rgba(81, 146, 97, 0.5);
+    --secundario: rgb(214, 138, 46);
+    --blanco: rgb(255, 255, 255);
+    --negro: rgb(0, 0, 0);
+    --fontPrincipale: Roboto, sans-serif;
+    --fontSecu: "Poppins", sans-serif;
+
+}
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/logo/bg_zoo.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2; /* 20% de opacidad */
+    z-index: -1;
+}
+
+h1, h3, h2 {
+    font-family: var(--fontPrincipale);
+    color: var(--secundario);
+    font-style: normal;
+    padding: 0;
+}
+h3 {
+    font-style: italic;
+}
+p {
+    font-family: var(--fontSecu);
+    font-style: normal;
+}
+
+/* Menu navegation */
+.nav-bg {
+    background-color: var(--principal);
+    color: var(--blanco);
+    font-size: 1.2rem;
+}
+.nav-link {
+    color: var(--blanco);
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    margin-top: 0;
+}
+
+.bg-text {
+    background-color: var(--principalOpac);
+}
+
+/* Form Temoignage */
+.cartEmu {
+    font-family: var(--fontSecu);
+}
+
+.formeLine {
+    border: 4px solid var(--principalOpac);
+    padding: 20px;
+}
+
+.bg_card {
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/logo/fond_card.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(90%); /* Reduce el brillo sin afectar los hijos */
+}
+
+/* Footer */
+a {
+    text-decoration: none;
+}
+.text-h5 {
+    color: var(--secundario);
+}
+
+/* Contact */
+.img_contact {
+    background-image: url(/img/contact/lion-contact.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Hanitatq */
+.cardZoom {
+    transition: transform, 0.3s ease;
+}
+.cardZoom:hover {
+    transform: scale(1.1);
+}
+
+/* Savane */
+.savaneImg {
+    background-image: url(/img/carousel/1\ savane.jpg);
+    background-size: cover;
+    width: 60%;
+    height: 20rem;
+    background-position: center;
+}
+
+/* Bande avec succès dans index / ADMIN */
+.bande {
+    background-color: rgba(40, 167, 69, 0.8);
+    width: 25%;
+}
+
+input[type="submit"].text-center.text-danger {
+    all: unset; /* Resetea todos los estilos heredados */
+    display: inline-block; /* Asegura que se comporte como un botón */
+    cursor: pointer; /* Mantiene el cursor adecuado */
+}
