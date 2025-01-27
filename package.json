@@ -1,16 +1,20 @@
 {
   "name": "zoo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project Arcadia Study",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Carlos Rodriguez",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "normalize.css": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "arcadia_zoo"
   }
 }
