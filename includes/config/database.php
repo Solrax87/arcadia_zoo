@@ -1,5 +1,7 @@
 <?php
 
+require '/includes/config/session.php';
+
 function connectDB() : mysqli {
     $db = mysqli_connect('localhost', 'root', '', 'a_zoo');
 
