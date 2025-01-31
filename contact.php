@@ -16,30 +16,33 @@
     <!-- formulaire du contact -->
     <section class="container container fluide">
         <div class="container formeLine rounded mt-4 shadow p-3 mb-5">
-            <form action="POST">
+            <form 
+                method="POST"
+                action="https://formspree.io/f/mgvokgob"
+                >
                 <legend class="mb-2 ">Contactez-nous !</legend>
                 <!-- Nom -->
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Nom et prènom</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Votre prènom">
+                    <label for="text" class="form-label">Nom et prènom</label>
+                    <input type="text" class="form-control" id="text" name="text" placeholder="Votre prènom">
                 </div>    
                 <!-- E-mail -->
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                 </div>
                 <!-- Message -->
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Votre message"></textarea>
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Votre message"></textarea>
                 </div>
 
                 <!-- Button envoyer -->
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-warning mt-2 mb-2 " id="liveToastBtn">Envoyer</button>
+                    <button type="submit" class="btn btn-warning mt-2 mb-2 " id="liveToastBtn">Envoyer</button>
                 </div>
                 <!-- Message modale sucess -->
-                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <!-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
                     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
                             <img src="/img/success.png" class="rounded me-2" alt="success">
@@ -51,7 +54,7 @@
                         Merci, votre message sera verifiée et traité le plus vite possible.
                         </div>
                     </div>
-                </div>                
+                </div>                 -->
             </form>
         </div>
         <div>

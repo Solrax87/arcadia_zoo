@@ -10,7 +10,7 @@ function connectDB(): mysqli {
 
     // Vérifier si la connexion a échoué
     if (!$db) {
-        echo "❌ Erreur : Connexion impossible à la base de données.";
+        echo "Erreur : Connexion impossible à la base de données.";
         exit;
     }
     return $db; // Retourner l'objet de connexion
