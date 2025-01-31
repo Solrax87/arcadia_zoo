@@ -1,19 +1,16 @@
 # arcadia_zoo
-Project Arcadia Study
+Installation du projet en local :
+Une fois le projet connecté depuis Github dans l'application VS Code :
 
-* Instalacion de proyecto en local:
+Installer les dépendances de Node en ouvrant le terminal (dans VS Code) avec la commande suivante :
+npm init -y
 
-Una ves conectado el proyecto de Github en la aplicacion de VS Code
+Ensuite, installer Bootstrap avec la commande suivante :
+npm install bootstrap
 
-- Instalar las dependencias de Node abriendo la terminal (en VS Code) con el siguiente comando: 
-"npm init -y"
-
-- Después la instalación de Bootstrap con el siguiente comando : 
-"npm install bootstrap"
-
-- Aun en la terminal colocamos el siguiente comando para la connéction a php:
-"php -S localhost:8888" + enter
-Y esto nos arroja un lien para poder ver en directo el proyecto.
+Toujours dans le terminal, exécuter la commande suivante pour la connexion à PHP :
+php -S localhost:8888 + Entrée
+Cela nous fournira un lien permettant de voir le projet en direct.
 
 
 Explication plus detallée :
