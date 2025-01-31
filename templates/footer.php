@@ -51,8 +51,8 @@
                     <div class="col mt-2 d-flex justify-content-center">
                         <div class="ms-3">
                             <a href="/"><img class="m-2 rounded" src="/img/logo/logo_zoo_arcadia.png" width="80" height="80" alt="logo arcadia zoo" ></a>
-                            <a href="mention_legal.php"><p>Mentions légale</p></a>
-                            <a href="mention_legal.php"><p>Politique de cookies</p></a>
+                            <a href="mention_legale.php"><p>Mentions légale</p></a>
+                            
                             </div>
                     </div>
                     <!-- Info contact -->

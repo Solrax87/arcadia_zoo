@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="/../css/styles.css" as="style">
     <!-- normalize -->
     <link rel="preload" href="/node_modules/normalize.css/normalize.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/logo/favicon.ico">
     
     <!-- Titre onglets du navigateur -->
     <title>Arcadia Zoo</title>
@@ -74,7 +76,7 @@
                     </ul> -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link col-sm p-3" href="/admin/login.php">CONNECTION</a>
+                    <a class="nav-link col-sm p-3" href="/admin/login.php">CONNEXION</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link col-sm p-3" href="/contact.php">CONTACT</a>
