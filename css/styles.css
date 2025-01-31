@@ -6,7 +6,7 @@
     --blanco: rgb(255, 255, 255);
     --negro: rgb(0, 0, 0);
     --fontPrincipale: Roboto, sans-serif;
-    --fontSecu: "Poppins", sans-serif;
+    --fontSecu: Poppins, sans-serif;
 
 }
 body {
