@@ -16,3 +16,4 @@ function connectDB(): mysqli {
     return $db; // Retourner l'objet de connexion
 }
 ?>
+
