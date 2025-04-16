@@ -9,24 +9,6 @@
         header("Location: /erreur_acces.php");
         exit;
     }
-    // Définir la redirection en fonction du rôle
-    if (isset($_SESSION['role'])) {
-        switch ($_SESSION['role']) {
-            case 'administrateur':
-                $lienRetour = "/admin/index.php";
-                break;
-            case 'veterinaire':
-                $lienRetour = "/admin/indexVeterinaire.php";
-                break;
-            case 'employe':
-                $lienRetour = "/admin/indexEmployer.php";
-                break;
-            default:
-                $lienRetour = "/login.php"; // Par défaut, redirection vers la connexion si le rôle est inconnu
-        }
-    } else {
-        $lienRetour = "/login.php"; // Redirige vers login si aucun rôle défini
-    }
     // Importation du connection
     require '../includes/config/database.php';
     $db = connectDB();
@@ -59,7 +41,22 @@
             $resultat = mysqli_query($db, $query);
             
             if($resultat) {
-                header('location: /admin?resultat=3');
+                // Si la suppression de l'animal est réussie
+                switch ($_SESSION['role']) {
+                    case 'administrateur':
+                        // Si l'utilisateur est administrateur, rediriger vers la page d'administration
+                        header('Location: /admin/index.php?resultat=3');
+                        break;
+                    case 'veterinaire':
+                        // Si l'utilisateur est vétérinaire, rediriger vers le tableau de bord vétérinaire
+                        header('Location: /admin/indexVeterinaire.php?resultat=3');
+                        break;
+                    default:
+                        // Si le rôle est inconnu, rediriger vers la page d'accueil ou de connexion
+                        header('Location: /login.php');
+                        break;
+                }
+                exit; // Assurez-vous de sortir après la redirection pour éviter l'exécution du script
             }
         }
     }

@@ -89,7 +89,26 @@
             $resultat = mysqli_query($db, $query);
 
             if($resultat) {
-                header('Location: /admin?resultat=1');
+                // Redirection en fonction du rôle de l'utilisateur
+                switch ($_SESSION['role']) {
+                    case 'administrateur':
+                        // Si l'utilisateur est un administrateur, redirige vers la page d'administration
+                        header('Location: /admin/index.php?resultat=1');
+                        break;
+                    case 'veterinaire':
+                        // Si l'utilisateur est un vétérinaire, redirige vers le tableau de bord du vétérinaire
+                        header('Location: /admin/indexVeterinaire.php?resultat=1');
+                        break;
+                    case 'employe':
+                        // Si l'utilisateur est un employé, redirige vers la page d'accueil de l'employé
+                        header('Location: /admin/indexEmployer.php?resultat=1');
+                        break;
+                    default:
+                        // Si le rôle n'est pas reconnu, redirige vers la page d'accueil par défaut
+                        header('Location: /');
+                }
+
+                exit; // Quitter après la redirection pour éviter l'exécution d'autres parties du script
             }
         }
     }
