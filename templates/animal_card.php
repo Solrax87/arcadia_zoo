@@ -1,62 +1,57 @@
 <?php 
-    // Importation de la db
-    require_once __DIR__ . '/../includes/config/database.php';
-    $db = connectDB();
+require_once __DIR__ . '/../vendor/autoload.php'; 
 
-    // Limite de animal_card 4 pour ne pas invair l'index
+try {
+    // Connexion à MongoDB
+    $client = new MongoDB\Client("mongodb://mongo:27017");
+    $db = $client->a_zoo;
+
+    // Collections
+    $collectionAnimaux = $db->animaux;
+    $collectionHabitats = $db->habitats;
+    $collectionUtilisateurs = $db->utilisateurs;
+
+    // Limite d'animaux à afficher
     $limite = isset($limite) ? (int)$limite : 4;
 
-    //Consultation
-    $query = "SELECT animaux.id, animaux.nom, animaux.espece, animaux.image_path, 
-                 habitats.nom AS habitat_nom,
-                 utilisateurs.nom AS veterinaire_nom
-          FROM animaux
-          LEFT JOIN habitats ON animaux.habitat_id = habitats.id
-          LEFT JOIN utilisateurs ON animaux.veterinaire_id = utilisateurs.id 
-          /* Limitateur */
-          LIMIT {$limite}";
+    // Récupérer les animaux
+    $animaux = $collectionAnimaux->find([], ['limit' => $limite])->toArray();
 
-    //Les resultats
-    $resultat = mysqli_query($db, $query);
+    // Récupérer tous les habitats dans un tableau clé=id
+    $habitatsData = [];
+    $habitats = $collectionHabitats->find();
+    foreach ($habitats as $habitat) {
+        $habitatsData[$habitat['id']] = $habitat['nom'];
+    }
+
+    // Récupérer tous les utilisateurs (vétérinaires ou employés) dans un tableau clé=id
+    $utilisateursData = [];
+    $utilisateurs = $collectionUtilisateurs->find();
+    foreach ($utilisateurs as $utilisateur) {
+        $utilisateursData[$utilisateur['id']] = $utilisateur['nom'];
+    }
+
+} catch (Exception $e) {
+    echo "Erreur de connexion à MongoDB : " . $e->getMessage();
+    exit;
+}
 ?>
 
 <!-- Cartes des animaux -->
 <section class="container-fluid row justify-content-sm-center">
-    
-    <h2 class="text-center mt-4">NOS AMIS LES ANIMAUX</h2>
-    
-    <!-- 1 -->
-    <?php while($animal = mysqli_fetch_assoc($resultat)) : ?>
-    <div class="card col-lg-2 m-3 shadow p-3 mb-5 cardZoom" style="width: 18rem;">
-        <img src="/images/<?php echo $animal['image_path'] ?>" class="card-img-top" alt="image animal">
-        <div class="card-body">
-            <h5 class="card-title text-center"><?php echo $animal['nom'] ?></h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Animal - <?php echo $animal['espece'] ?></li>
-                    <!-- <li class="list-group-item">Race - Equus quagga</li> -->
-                    <li class="list-group-item">Habitat - <?php echo $animal['habitat_nom'] ?></li>
-                    <li class="list-group-item">Vétérinaire ou employer - <?php echo $animal['veterinaire_nom'] ?></li>
-                    <!--<li class="list-group-item">État - </li> -->
-                    <!-- <li class="list-group-item">Nourriture proposée - Foin</li>
-                    <li class="list-group-item">Nourriture en grammes - 12.000 gr</li>
-                    <li class="list-group-item fecha">Date de passage - </li> -->
-                </ul>
-        </div>
-       
-    </div>
 
+    <!-- Bouton fetch -->
+    <div class="container my-4 text-center">
+  <button id="toggleData" class="btn btn-primary">Afficher les animaux</button>
+  <div id="animalData" class="mt-3" style="display: none;">
+</div>
 
-    <?php endwhile; ?>
-    
 </section>
+
 <div class="container mt-2 mb-2 d-flex justify-content-center">
     <a href="/habitats.php" class="btn btn-warning">Plus d'amis</a>
 </div>
+
 <div class="text-success">
   <hr>
 </div>
-
-<?php
-    // Deconnecter
-    mysqli_close($db);
-?>

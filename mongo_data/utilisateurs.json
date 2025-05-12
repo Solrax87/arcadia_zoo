@@ -1,0 +1,27 @@
+[
+    {
+      "id": 12,
+      "nom": "Carlos Rodriguez",
+      "email": "carlos@arcadia.fr",
+      "password": "$2y$10$xOoZh5hOH.xwLsGNCdeLZuO3x5D1G5fVDphrG0/tyPGJcTELHFtsC",
+      "role": "administrateur",
+      "created_at": "2025-01-23T13:39:49Z"
+    },
+    {
+      "id": 13,
+      "nom": "Rodriguez Cody",
+      "email": "cody@arcadia.fr",
+      "password": "$2y$10$sSO68eEHu/Rvg57.zP0u/ucONgzxd4Hn4yDri82PPSEPAep.GPKDm",
+      "role": "veterinaire",
+      "created_at": "2025-01-23T13:49:09Z"
+    },
+    {
+      "id": 14,
+      "nom": "Djeïla Rodriguez",
+      "email": "djeila@arcadia.fr",
+      "password": "$2y$10$PkUejqhjWjSZyFw/qaRs/.FXZjyHH2tWnX.WQMhYIIuhjtUs.ThdS",
+      "role": "employe",
+      "created_at": "2025-01-24T13:18:35Z"
+    }
+  ]
+  

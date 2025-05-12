@@ -101,26 +101,9 @@
             // echo $query;
             $resultat = mysqli_query($db, $query);
 
-            // Si la mise à jour a réussi
-        if($resultat) {
-            // Redirection en fonction du rôle de l'utilisateur
-            switch ($_SESSION['role']) {
-                case 'administrateur':
-                    // Si l'utilisateur est un administrateur, redirige vers la page d'administration
-                    header('Location: /admin/index.php?resultat=2');
-                    break;
-                case 'veterinaire':
-                    // Si l'utilisateur est un vétérinaire, redirige vers le tableau de bord du vétérinaire
-                    header('Location: /admin/indexVeterinaire.php?resultat=2');
-                    break;
-                default:
-                    // Si le rôle n'est pas reconnu, redirige vers la page d'accueil par défaut
-                    header('Location: /');
+            if($resultat) {
+                header('Location: /admin?resultat=2');
             }
-
-            exit; // Quitter après la redirection pour éviter l'exécution d'autres parties du script
-        }
-
         }
     }
 

@@ -68,22 +68,8 @@
             $resultat = mysqli_query($db, $query);
     
             if($resultat) {
-                // Si la suppression de l'animal est réussie
-                switch ($_SESSION['role']) {
-                    case 'administrateur':
-                        // Si l'utilisateur est administrateur, rediriger vers la page d'administration
-                        header('Location: /admin/index.php?resultat=3');
-                        break;
-                    case 'veterinaire':
-                        // Si l'utilisateur est vétérinaire, rediriger vers le tableau de bord vétérinaire
-                        header('Location: /admin/indexVeterinaire.php?resultat=3');
-                        break;
-                    default:
-                        // Si le rôle est inconnu, rediriger vers la page d'accueil ou de connexion
-                        header('Location: /login.php');
-                        break;
-                }
-                exit; // Assurez-vous de sortir après la redirection pour éviter l'exécution du script
+                header('location: /admin?resultat=3');
+                exit();
             }
         }
     }

@@ -1,0 +1,27 @@
+[
+    {
+      "id": 7,
+      "nom": "Savane",
+      "description": "La savane est un écosystème vaste et diversifié, et nos résidents profitent d'un cadre qui imite fidèlement leur milieu naturel.",
+      "image_path": "bb083bbfffb80a95829018832695d369.jpg"
+    },
+    {
+      "id": 9,
+      "nom": "Forêt",
+      "description": "Les animaux vivent en harmonie avec un environnement qui recrée fidèlement les forêts denses et humides.",
+      "image_path": "54a50897d4a6399785353b0b4e3841cb.jpg"
+    },
+    {
+      "id": 10,
+      "nom": "Montagne",
+      "description": "Ici, les animaux résidents s'épanouissent dans un environnement qui reflète les conditions escarpées et robustes des montagnes.",
+      "image_path": "15f007651f876bedb52e708f43e35baa.jpg"
+    },
+    {
+      "id": 11,
+      "nom": "Marais",
+      "description": "Un lieu où la nature aquatique et terrestre se rencontrent harmonieusement.",
+      "image_path": "b778ab23fad50f6a17dd1d11e42ff115.jpg"
+    }
+  ]
+  

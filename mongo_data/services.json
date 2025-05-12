@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "titre": "Petit Train",
+      "type": "ACTIVITÉS EN FAMILLE",
+      "description": "Montez à bord de notre Petit Train pour une visite tranquille à travers le zoo, idéale pour découvrir nos animaux sans effort. Parfait pour les familles !",
+      "image_path": "f2b48cefb65400eb2748784446bca6ee.jpg"
+    },
+    {
+      "id": 11,
+      "titre": "Balades",
+      "type": "ACTIVITÉS EN FAMILLE",
+      "description": "Profitez de nos Balades guidées pour explorer le zoo à pied, en immersion totale dans la nature et près des animaux.",
+      "image_path": "f06a126b2a0881a550ad92739dbc837c.jpg"
+    },
+    {
+      "id": 12,
+      "titre": "Spectacles",
+      "type": "ACTIVITÉS EN FAMILLE",
+      "description": "Assistez à nos Spectacles captivants mettant en scène des animaux.",
+      "image_path": "5a4364bdad8513a37530a7c3721f21c5.jpg"
+    }
+  ]
+  

@@ -1,19 +1,27 @@
 <?php
 
-// Inclure le fichier session.php seulement une fois pour éviter les erreurs
-require_once 'session.php';
+// Inclure le fichier de session si besoin
+require_once __DIR__ . '/session.php';
 
 // Fonction pour connecter la base de données
 function connectDB(): mysqli {
-    // Connexion à la base de données
-    $db = mysqli_connect('localhost', 'root', '', 'a_zoo');
+    // Utiliser les variables d'environnement Docker OU fallback local
+    $host = getenv('DB_HOST') ?: 'mysql';           // "mysql" est le nom du service dans Docker
+    $user = getenv('DB_USER') ?: 'zoo_user';
+    $password = getenv('DB_PASSWORD') ?: 'zoo_pass';
+    $database = getenv('DB_NAME') ?: 'a_zoo';
 
-    // Vérifier si la connexion a échoué
+    // Connexion à MySQL
+    $db = mysqli_connect($host, $user, $password, $database);
+
+    // Vérification de la connexion
     if (!$db) {
         echo "Erreur : Connexion impossible à la base de données.";
         exit;
     }
-    return $db; // Retourner l'objet de connexion
+    //nDéfinir le jeu de caractères    
+    mysqli_set_charset($db, "utf8mb4");
+
+    return $db;
 }
 ?>
-

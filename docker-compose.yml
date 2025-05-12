@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+  php:
+    build: .
+    container_name: zoo_php
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+      - mongo
+    networks:
+      - zoo_net
+
+  mysql:
+    image: mysql:5.7
+    container_name: zoo_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: a_zoo
+      MYSQL_USER: zoo_user
+      MYSQL_PASSWORD: zoo_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./a_zoo.sql:/docker-entrypoint-initdb.d/a_zoo.sql
+    networks:
+      - zoo_net
+
+  mongo:
+    image: mongo:6
+    container_name: zoo_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - zoo_net
+
+volumes:
+  mysql_data:
+  mongo_data:
+
+networks:
+  zoo_net:
+    

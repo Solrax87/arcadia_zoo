@@ -1,0 +1,102 @@
+[
+    {
+      "id": 2,
+      "date": "2025-01-19",
+      "animal_id": 2,
+      "habitat_id": 7,
+      "etat": "Parfait état",
+      "nourriture": "Foin",
+      "grammage": 8000,
+      "commentaire": "Très énergique comme d'habitude",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 3,
+      "date": "2025-01-20",
+      "animal_id": 25,
+      "habitat_id": 10,
+      "etat": "Très vigilante ce matin",
+      "nourriture": "Viande",
+      "grammage": 5000,
+      "commentaire": "Vaccination la semaine prochaine",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 5,
+      "date": "2025-01-10",
+      "animal_id": 24,
+      "habitat_id": 7,
+      "etat": "Parfait état",
+      "nourriture": "Viande",
+      "grammage": 8000,
+      "commentaire": "Il dormait beaucoup depuis ce matin",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 6,
+      "date": "2025-01-22",
+      "animal_id": 30,
+      "habitat_id": 9,
+      "etat": "Un peu énervé",
+      "nourriture": "Foin et pommes",
+      "grammage": 4000,
+      "commentaire": "Il avait très faim",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 8,
+      "date": "2025-01-20",
+      "animal_id": 26,
+      "habitat_id": 10,
+      "etat": "Dors",
+      "nourriture": "Poissons",
+      "grammage": 2000,
+      "commentaire": "Les animaliers ont laissé des poissons en cas de réveil.",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 9,
+      "date": "2025-01-21",
+      "animal_id": 26,
+      "habitat_id": 10,
+      "etat": "Cool ! 2",
+      "nourriture": "Poissons",
+      "grammage": 3000,
+      "commentaire": "Vient de se réveiller",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 10,
+      "date": "2025-01-21",
+      "animal_id": 28,
+      "habitat_id": 11,
+      "etat": "Toujours avec beaucoup faim",
+      "nourriture": "Pastèques",
+      "grammage": 20000,
+      "commentaire": "Blessure légère à l'oreille gauche",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 11,
+      "date": "2025-01-22",
+      "animal_id": 29,
+      "habitat_id": 10,
+      "etat": "Il reste tranquille",
+      "nourriture": "Foin",
+      "grammage": 5000,
+      "commentaire": "Vaccination faite",
+      "veterinaire_id": 13
+    },
+    {
+      "id": 12,
+      "date": "2025-01-22",
+      "animal_id": 27,
+      "habitat_id": 11,
+      "etat": "Il est très sale du dos",
+      "nourriture": "Poulet",
+      "grammage": 6000,
+      "commentaire": "Resté au soleil après avoir mangé",
+      "veterinaire_id": 13
+    }
+  ]
+  

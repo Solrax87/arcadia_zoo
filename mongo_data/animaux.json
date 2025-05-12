@@ -1,0 +1,91 @@
+[
+    {
+      "id": 2,
+      "nom": "Zera",
+      "espece": "Zèbre",
+      "habitat_id": 7,
+      "veterinaire_id": 4,
+      "etat": null,
+      "date": "2025-01-09",
+      "detail": "Super !",
+      "image_path": "e4ef7b1896a08589ed16457f79d0435d.jpg"
+    },
+    {
+      "id": 24,
+      "nom": "Lino",
+      "espece": "Lion",
+      "habitat_id": 7,
+      "veterinaire_id": 14,
+      "etat": null,
+      "date": "2025-01-29",
+      "detail": "",
+      "image_path": "3d9b801132e6545c6307b087d01c1b3e.jpg"
+    },
+    {
+      "id": 25,
+      "nom": "Lobito",
+      "espece": "Loup",
+      "habitat_id": 10,
+      "veterinaire_id": 3,
+      "etat": null,
+      "date": "2025-01-15",
+      "detail": "",
+      "image_path": "6411faf7faad597fe3b7f5d534345a16.jpg"
+    },
+    {
+      "id": 26,
+      "nom": "L'oxxo",
+      "espece": "Ours",
+      "habitat_id": 10,
+      "veterinaire_id": 3,
+      "etat": null,
+      "date": "2025-01-20",
+      "detail": "",
+      "image_path": "28d38525dec8c0f20513c733e2e2b2bc.jpg"
+    },
+    {
+      "id": 27,
+      "nom": "Coco",
+      "espece": "Crocodile",
+      "habitat_id": 11,
+      "veterinaire_id": 2,
+      "etat": null,
+      "date": "2025-01-09",
+      "detail": "",
+      "image_path": "7fb7380667baa916764790491db68e58.jpg"
+    },
+    {
+      "id": 28,
+      "nom": "Hippo",
+      "espece": "hippopotame",
+      "habitat_id": 11,
+      "veterinaire_id": 4,
+      "etat": null,
+      "date": "2025-01-10",
+      "detail": "",
+      "image_path": "2aca0d1fccff835c4913783e9be772bb.jpg"
+    },
+    {
+      "id": 29,
+      "nom": "Veni",
+      "espece": "cerf",
+      "habitat_id": 9,
+      "veterinaire_id": 3,
+      "etat": null,
+      "date": "2025-01-18",
+      "detail": "",
+      "image_path": "377e771d73f0a6765c3c2830890a04ed.jpg"
+    },
+    {
+      "id": 30,
+      "nom": "Babe",
+      "espece": "Sanglier",
+      "habitat_id": 9,
+      "veterinaire_id": 4,
+      "etat": null,
+      "date": "2025-01-22",
+      "detail": "",
+      "image_path": "e91f4a656dbd5cc4743ecf9bc1559c8d.jpg"
+    }
+  ]
+  

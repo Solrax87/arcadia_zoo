@@ -1,6 +1,7 @@
 <?php 
 
-  require_once 'includes/functions.php';
+require_once __DIR__ . '/includes/config/database.php';
+require_once __DIR__ . '/includes/functions.php';
 
   /** Temoignages */
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -97,12 +98,15 @@
   <div class="text-success">
     <hr>
   </div>
-
+  <!-- 3 cards animaux -->
   <?php incluTemplate('animal_card'); ?>
+
+
   
   <div class="shadow p-3 mb-5">
       <h1 class="text-center"><strong>NOS SERVICES</strong></h1>
   </div>
+  <!-- Insertoin des templates -->
   <?php incluTemplate('services'); ?>
   <?php incluTemplate('restauration'); ?>
   <?php incluTemplate('temoignages'); ?>
