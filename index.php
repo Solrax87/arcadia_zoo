@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/includes/config/database.php';
 require_once __DIR__ . '/includes/functions.php';
+require_once 'config.php';
 
   /** Temoignages */
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
