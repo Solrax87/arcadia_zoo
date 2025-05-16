@@ -6,4 +6,4 @@
 // sino erreur!!!
 define('TEMPLATES_URL', __DIR__ . '/../templates');
 // functions.php et app.php sont dans le même niveau
-define('FUNCTIONS_URL', __DIR__ . 'functions.php');
+define('FUNCTIONS_URL', __DIR__ . '/functions.php');
