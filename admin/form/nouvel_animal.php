@@ -43,6 +43,13 @@
     // Execute le code après avoir envoyé le formulaire
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        // Vérifier le token CSRF
+        if (empty($_POST['csrf_token'])
+            || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
+        ) {
+            die("Requête invalide (CSRF)"); 
+        }
+
         // echo "<pre>";
         // var_dump($_POST);
         // echo "</pre>";
@@ -147,6 +154,8 @@
 
         <div class="formeLine rounded mt-4 shadow p-3 mb-5">
                 <form method="POST" action="/admin/form/nouvel_animal.php" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+
                     <legend class="mb-2 ">Insérer nouvel animal</legend>
                     <!-- Nom -->
                     <div class="mb-3">

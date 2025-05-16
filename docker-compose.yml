@@ -7,7 +7,7 @@ services:
     container_name: zoo_php
     ports:
       - "8080:80"
-      - "8443:443"  # Puerto HTTPS
+      - "8443:443"  # Puerto HTTPS !!!
     volumes:
       - .:/var/www/html
     depends_on:

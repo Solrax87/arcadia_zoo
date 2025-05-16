@@ -25,6 +25,14 @@
 
     // Execute le code après avoir envoyé le formulaire
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        // Vérifier le token CSRF
+        if (empty($_POST['csrf_token'])
+            || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
+        ) {
+            die("Requête invalide (CSRF)"); 
+        }
+
         $titre = mysqli_real_escape_string($db, $_POST['titre']);
         $type = mysqli_real_escape_string($db, $_POST['type']);
         $description = mysqli_real_escape_string($db, $_POST['description']);

@@ -2,10 +2,16 @@
 
 require_once __DIR__ . '/includes/config/database.php';
 require_once __DIR__ . '/includes/functions.php';
-require_once 'config.php';
 
   /** Temoignages */
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Vérifier le token CSRF
+    if (empty($_POST['csrf_token'])
+        || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
+    ) {
+        die("Requête invalide (CSRF)"); 
+    }
+
     $nomPrenom = $_POST['prenom'] ?? '';
     $qualification = $_POST['options'] ?? '';
     $message = $_POST['message'] ?? '';
