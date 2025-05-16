@@ -9,13 +9,7 @@
 
   // Authentification de l'utilisateur
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Vérifier le token CSRF
-        if (empty($_POST['csrf_token'])
-            || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
-        ) {
-            die("Requête invalide (CSRF)"); 
-        }
-
+      
       // Valider et nettoyer l'email
       $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
       if ($email) {
