@@ -13,7 +13,9 @@ if (!$animalId) {
     exit;
 }
 
-// 3) Connexion et requête préparée
+// 3) Connexion et requête préparée dans la DB
+//    On utilise une requête préparée pour éviter les injections SQL
+//    et on force l’ID à être un entier
 $db = connectDB();
 $sql = "
     SELECT 
