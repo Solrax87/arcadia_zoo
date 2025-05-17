@@ -53,6 +53,7 @@ $resultat = $stmt->get_result();
             <li class="list-group-item">Vétérinaire - <?php echo $veto; ?></li>
           </ul>
         </div>
+        
       </div>
     </a>
   <?php endwhile; ?>

@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
 
@@ -40,8 +40,12 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+      - ./mongo_data:/data/import:ro    # ← Ajouté pour vos fichiers JSON
     networks:
       - zoo_net
+
+# … reste inchangé …
+
 
 volumes:
   mysql_data:
