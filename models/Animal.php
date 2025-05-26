@@ -14,7 +14,7 @@ class Animal
 
     public function __construct(array $data)
     {
-        // MongoDB _id est un objet, on le convertit en chaîne
+        // MongoDB _id es un objeto convertido en cadena
         $this->id          = (string)($data['_id'] ?? $data['id']);
         $this->nom         = $data['nom'] ?? '';
         $this->espece      = $data['espece'] ?? '';
