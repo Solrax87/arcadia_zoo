@@ -13,10 +13,6 @@ require_once __DIR__ . '/includes/functions.php';
     // Validation des donnes
     if (!empty($nomPrenom) && !empty($qualification) && !empty($message)) {
 
-      // BD
-      require_once __DIR__ . '/includes/config/database.php';
-      $db = connectDB();
-
       // Preparation de consulte
       $query = "INSERT INTO temoignages (nom_prenom, qualification, message) VALUES (?, ?, ?)";
       $stmt = $db->prepare($query);
@@ -99,10 +95,8 @@ require_once __DIR__ . '/includes/functions.php';
   <div class="text-success">
     <hr>
   </div>
-  <!-- 3 cards animaux -->
+  <!-- cards animaux -->
   <?php incluTemplate('animal_card'); ?>
-
-
   
   <div class="shadow p-3 mb-5">
       <h1 class="text-center"><strong>NOS SERVICES</strong></h1>

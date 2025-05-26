@@ -8,8 +8,6 @@ try {
 
     // Collections
     $collectionAnimaux = $db->animaux;
-    $collectionHabitats = $db->habitats;
-    $collectionUtilisateurs = $db->utilisateurs;
 
     // Limite d'animaux à afficher
     $limite = isset($limite) ? (int)$limite : 4;
@@ -17,19 +15,6 @@ try {
     // Récupérer les animaux
     $animaux = $collectionAnimaux->find([], ['limit' => $limite])->toArray();
 
-    // Récupérer tous les habitats dans un tableau clé=id
-    $habitatsData = [];
-    $habitats = $collectionHabitats->find();
-    foreach ($habitats as $habitat) {
-        $habitatsData[$habitat['id']] = $habitat['nom'];
-    }
-
-    // Récupérer tous les utilisateurs (vétérinaires ou employés) dans un tableau clé=id
-    $utilisateursData = [];
-    $utilisateurs = $collectionUtilisateurs->find();
-    foreach ($utilisateurs as $utilisateur) {
-        $utilisateursData[$utilisateur['id']] = $utilisateur['nom'];
-    }
 
 } catch (Exception $e) {
     echo "Erreur de connexion à MongoDB : " . $e->getMessage();
@@ -38,20 +23,28 @@ try {
 ?>
 
 <!-- Cartes des animaux -->
-<section class="container-fluid row justify-content-sm-center">
-
-    <!-- Bouton fetch -->
-    <div class="container my-4 text-center">
-  <button id="toggleData" class="btn btn-primary">Afficher les animaux</button>
-  <div id="animalData" class="mt-3" style="display: none;">
+<!-- Bouton de bascule -->
+<div class="text-center my-3">
+  <button id="toggleData" class="btn btn-primary">Masquer les animaux</button>
 </div>
 
-</section>
+<!-- Conteneur qu’on va montrer/cacher -->
+<div id="animalCardContainer" class="row justify-content-sm-center">
+  <?php foreach($animaux as $animal): ?>
+    <div class="card col-lg-2 m-3 shadow p-3 mb-5 cardZoom" style="width: 18rem;">
+      <img src="/images/<?php echo htmlspecialchars($animal['image_path']); ?>" 
+           class="card-img-top" 
+           alt="Image de <?php echo htmlspecialchars($animal['nom']); ?>">
+      <div class="card-body">
+        <h5 class="card-title text-center"><?php echo htmlspecialchars($animal['nom']); ?></h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Espèce : <?php echo htmlspecialchars($animal['espece']); ?></li>
 
-<div class="container mt-2 mb-2 d-flex justify-content-center">
-    <a href="/habitats.php" class="btn btn-warning">Plus d'amis</a>
+        </ul>
+      </div>
+    </div>
+  <?php endforeach; ?>
 </div>
 
-<div class="text-success">
-  <hr>
-</div>
+<!-- javascript-->
+<script src="/js/main.js"></script>

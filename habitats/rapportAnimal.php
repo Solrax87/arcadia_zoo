@@ -73,28 +73,28 @@ incluTemplate('header');
           </h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              Animal – <?php echo Escaper::e($rapport['animal_espece']); ?>
+              Animal - <?php echo Escaper::e($rapport['animal_espece']); ?>
             </li>
             <li class="list-group-item">
-              Habitat – <?php echo Escaper::e($rapport['habitat_nom']); ?>
+              Habitat - <?php echo Escaper::e($rapport['habitat_nom']); ?>
             </li>
             <li class="list-group-item">
-              Vétérinaire – <?php echo Escaper::e($rapport['veterinaire_nom']); ?>
+              Vétérinaire - <?php echo Escaper::e($rapport['veterinaire_nom']); ?>
             </li>
             <li class="list-group-item">
-              État – <?php echo Escaper::e($rapport['etat']); ?>
+              État - <?php echo Escaper::e($rapport['etat']); ?>
             </li>
             <li class="list-group-item">
-              Nourriture – <?php echo Escaper::e($rapport['nourriture']); ?>
+              Nourriture - <?php echo Escaper::e($rapport['nourriture']); ?>
             </li>
             <li class="list-group-item">
-              Grammage – <?php echo Escaper::i($rapport['grammage']); ?> gr
+              Grammage - <?php echo Escaper::i($rapport['grammage']); ?> gr
             </li>
             <li class="list-group-item">
-              Date de passage – <?php echo Escaper::e($rapport['date']); ?>
+              Date de passage - <?php echo Escaper::e($rapport['date']); ?>
             </li>
             <li class="list-group-item">
-              Commentaire – <?php echo Escaper::e($rapport['commentaire']); ?>
+              Commentaire - <?php echo Escaper::e($rapport['commentaire']); ?>
             </li>
           </ul>
         </div>

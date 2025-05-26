@@ -18,3 +18,8 @@ function authentiquee(): bool {
     }
     return !empty($_SESSION['login']);
 }
+function inclusTemplate(string $nom, array $data = [])
+{
+    extract($data);      // rend $animaux disponible
+    include TEMPLATES_URL . "/{$nom}.php";
+}
