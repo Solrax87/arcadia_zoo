@@ -70,9 +70,21 @@
                 $query = "DELETE FROM animaux WHERE id = {$id}";
                 $resultat = mysqli_query($db, $query);
         
-                if($resultat) {
-                    header('location: /admin?resultat=3');
-                    exit();
+                if ($resultat) {
+                switch ($_SESSION['role']) {
+                    case 'administrateur':
+                        header('Location: /admin?resultat=3');
+                        break;
+                    case 'veterinaire':
+                        header('Location: /admin/indexVeterinaire.php?resultat=3');
+                        break;
+                    case 'employe':
+                        header('Location: /admin/indexEmployer.php?resultat=3');
+                        break;
+                    default:
+                        header('Location: /');
+                }
+                exit;
                 }
             }
         }

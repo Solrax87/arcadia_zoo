@@ -91,6 +91,25 @@
             $query = " UPDATE services SET titre = '{$titre}', type = '{$type}', description = '{$description}', image_path = '{$nomImage}' WHERE id = {$id} ";
 
             $resultat = mysqli_query($db, $query);
+            if ($resultat) {
+            // Redirigir según rol
+            switch ($_SESSION['role']) {
+                case 'administrateur':
+                    header('Location: /admin?resultat=2');
+                    break;
+                case 'veterinaire':
+                    header('Location: /admin/indexVeterinaire.php?resultat=2');
+                    break;
+                case 'employe':
+                    header('Location: /admin/indexEmployer.php?resultat=2');
+                    break;
+                default:
+                    header('Location: /');
+            }
+            exit;
+            } else {
+                $erreur[] = 'Erreur lors de la mise à jour de l\'animal';
+            }
 
             if($resultat) {
                 header('Location: /admin?resultat=2');

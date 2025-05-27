@@ -24,7 +24,7 @@ if (toastTrigger) {
     elemento.textContent += fechaFormateada;
   });
 
-// Bouton pour afficher/masquer les cartes d'animaux
+// Bouton fetch pour afficher/masquer les cartes d'animaux
 // Afficher/Masquer les cartes d'animaux
 document.addEventListener('DOMContentLoaded', () => {
   const btn    = document.getElementById('toggleData');

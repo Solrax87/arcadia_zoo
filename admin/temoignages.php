@@ -36,9 +36,22 @@ if (isset($_GET['delete_id'])) {
     $stmt->close();
     $db->close();
 
-    // Redirection vers la page d’accueil admin avec code résultat = 3 (effacement)
-    header("Location: {$lienRetour}?result=3");
-    exit;
+    if ($resultat) {
+      switch ($_SESSION['role']) {
+          case 'administrateur':
+              header('Location: /admin?resultat=3');
+              break;
+          case 'veterinaire':
+              header('Location: /admin/indexVeterinaire.php?resultat=3');
+              break;
+          case 'employe':
+              header('Location: /admin/indexEmployer.php?resultat=3');
+              break;
+          default:
+              header('Location: /');
+      }
+      exit;
+    }
 }
 
 
