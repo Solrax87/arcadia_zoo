@@ -57,8 +57,7 @@
     ?>
 
 <div class="shadow p-3 mb-5">
-    <h1 class="text-center">Nos amis</h1>
-    <h3 class="text-center">""Nos amis, les ambassadeurs de la nature""</h3>
+    <h1 class="text-center">Équipe de travail</h1>
 </div>
 
 <section>
@@ -67,7 +66,6 @@
         <a href="/admin/form/new_rol.php" class="btn btn-warning ms-4">Role (+)</a>
     </div>
     <div class="card mb-3 container formeLine">
-        <h2 class="text-center m-4">Équipe de travail</h2>
         <table class="table">
             <thead>
                 <tr>
